@@ -1,16 +1,21 @@
-fib(1,0).
-fib(2,1).
-fib(X,Y) :-
-    X > 2,
-    X1 is X - 1,
-    fib(X1, A),
-    X2 is X - 2,
-    fib(X2, B),
-    Y is A + B.
+fib(1, 0).
+fib(2, 1).
+fib(N, X) :-
+    N1 is N-1,
+    N2 is N-2,
+    fib(N1, A),
+    fib(N2, B),
+    X is A + B.
 
-fibList(1, [0]).
-fibList(2, [1,0]).
-fibList(N, [X2, X1, X0|L]) :-
-    succ(NP, N),
-    fibList(NP, [X1,X0|L]),
-    plus(X0, X1, X2).
+
+
+fib2(1, [0]).
+fib2(2, [1,0]).
+fib2(N, [H|T]) :-
+    T = [A|T2],
+    N1 is N - 1,
+    fib2(N1, [A|T2]),
+    T2 = [B|T3],
+    N2 is N - 2,
+    fib2(N2, [B|T3]),
+    H is A + B.
