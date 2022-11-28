@@ -9,6 +9,6 @@ tran(acht,eight).
 tran(neun,nine).
 
 listtran([], []).
-listtran([X|Y], [A|B]) :-
-    tran(X,A),
-    listtran(Y, B).
+listtran([X|Xt], [Y|Yt]) :-
+    tran(X, Y),
+    listtran(Xt, Yt).

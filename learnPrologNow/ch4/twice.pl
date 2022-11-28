@@ -1,3 +1,3 @@
 twice([], []).
-twice([X|Y], [X,X|Z]) :-
-    twice(Y, Z).
+twice([X|T1], [X,X|T2]) :-
+    twice(T1, T2).
