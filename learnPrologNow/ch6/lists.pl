@@ -17,3 +17,15 @@ last2([_|T], X) :-
 
 swapfl([H1|T1], L) :-
     reverse(L, [H1|T1]).
+
+setAcc([], A, A).
+setAcc([H|T], Acc, Out) :-
+    \+member(H, Acc),
+    setAcc(T, [H|Acc], Out).
+setAcc([H|T], Acc, Out) :-
+    member(H, Acc),
+    setAcc(T, Acc, Out).
+
+set(InList, OutList) :-
+    reverse(TempList, OutList),
+    setAcc(InList, [], TempList).
