@@ -9,8 +9,8 @@ mother(celine,gerda).
 mother(gerda,hendrik).
 
 sibling(X, Y) :-
-    mother(Z, X),
-    mother(Z, Y),
-    father(A, X),
-    father(A, Y),
+    father(F, X),
+    father(F, Y),
+    mother(M, X),
+    mother(M, Y),
     X \== Y.
